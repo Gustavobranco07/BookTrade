@@ -15,12 +15,12 @@ import 'trade.status.page.dart';
 //import 'chat.page.dart';
 
 class BookTradeApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
+      home: SplashScreen(), // Definindo a tela inicial como SplashScreen
       routes: {
         "/login": (context) => LoginPage(),
         "/home": (context) => HomePage(),
@@ -37,7 +37,35 @@ class BookTradeApp extends StatelessWidget {
         //"/chats":(context) => ChatsPage(),
         //"/chat":(context) => ChatPage(),
       },
-      initialRoute: "/login",
+    );
+  }
+}
+
+class SplashScreen extends StatefulWidget {
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Aguarde 3 segundos e depois navegue para a tela de login
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacementNamed(context, '/login');
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFFD8D5B3), // Cor de fundo semelhante à imagem fornecida
+      body: Center(
+        child: Image.asset(
+          'assets/logo_transparent.png', // Substitua pelo caminho correto do seu logo
+          height: 200, // Ajuste a altura conforme necessário
+        ),
+      ),
     );
   }
 }

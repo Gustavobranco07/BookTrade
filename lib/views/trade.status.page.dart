@@ -125,12 +125,11 @@ class TradeStatusPage extends StatelessWidget {
             SizedBox(height: 10),
             _buildStatusCard(
               context,
-              title: 'ORWELL, George. 1984, 4ª Edição\n'
-                  'Data da solicitação: 5 de setembro de 2024\n\n'
-                  'Status de Envio: Seu pedido foi enviado para a transportadora',
+              title: 'ORWELL, George. 1984, 4ª Edição',
               idLabel: 'Código de rastreio:',
               id: 'NR0124BF2BR',
-              copyLabel: 'Copiar código de rastreio', content: '',
+              copyLabel: 'Copiar código de rastreio', content: 'Data da solicitação: 5 de setembro de 2024\n\n'
+                  'Status de Envio: Seu pedido foi enviado para a transportadora',
             ),
           ],
         ),
