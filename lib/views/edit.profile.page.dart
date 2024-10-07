@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 
 class EditProfilePage extends StatelessWidget {
-  final TextEditingController nameController = TextEditingController(text: 'Enzzo Gabriel');
+  final TextEditingController nameController = TextEditingController(text: 'Fulano da Silva');
   final TextEditingController phoneController = TextEditingController(text: '4002-8922');
-  final TextEditingController emailController = TextEditingController(text: 'bomdiaceia@gmail.com');
+  final TextEditingController emailController = TextEditingController(text: 'fulano@gmail.com');
   final TextEditingController passwordController = TextEditingController(text: '************');
 
   @override
@@ -53,7 +53,7 @@ class EditProfilePage extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    'Enzzo Gabriel',
+                    'Fulano da Silva',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,

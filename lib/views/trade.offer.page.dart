@@ -35,7 +35,7 @@ class TradeOfferPage extends StatelessWidget {
 
             // Informações do Livro
             Text(
-              'Código de Da Vinci',
+              'Código Da Vinci',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class TradeOfferPage extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              'Autor: Pitom\nEdição: 8\nISBN: 2a18s76zc\nPublicado em: 1990\nEditora: Gota de peroba\nEstado de conservação: Novo',
+              'Autor: Dan Brown\nEdição: 8\nISBN: 2a18s76zc\nPublicado em: 1990\nEditora: Gota de peroba\nEstado de conservação: Novo',
               style: TextStyle(
                 fontSize: 14,
                 height: 1.5,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,8 @@ class LoginPage extends StatelessWidget {
                   Image.asset(
                     'assets/logo_transparent.png',
                     height: 60,
-                    errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
+                    errorBuilder: (BuildContext context, Object error,
+                        StackTrace? stackTrace) {
                       return Text('Erro ao carregar imagem');
                     },
                   ),
@@ -105,7 +105,8 @@ class LoginPage extends StatelessWidget {
               // Criar nova conta
               TextButton(
                 onPressed: () {
-                  // Ação para "Criar nova conta"
+                  Navigator.pushNamed(
+                      context, "/register"); // Ação para "Criar nova conta"
                 },
                 child: Text(
                   'Criar nova conta',
@@ -121,4 +122,3 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
-

@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(height: 10),
                       // Nome do usuário
                       Text(
-                        'Enzzo',
+                        'Fulano da Silva',
                         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 5),
@@ -151,17 +151,17 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               leading: Icon(Icons.history, color: Colors.black),
               title: Text('Histórico de trocas'),
-              onTap: () {},
+              onTap: () {Navigator.pushNamed(context, '/tradeHistory');},
             ),
             ListTile(
               leading: Icon(Icons.notifications, color: Colors.black),
               title: Text('Notificações'),
-              onTap: () {},
+              onTap: () {Navigator.pushNamed(context, '/notifications');},
             ),
             ListTile(
               leading: Icon(Icons.swap_horiz, color: Colors.black),
               title: Text('Status de trocas'),
-              onTap: () {},
+              onTap: () {Navigator.pushNamed(context, '/tradeStatus');},
             ),
             ListTile(
               leading: Icon(Icons.favorite, color: Colors.black),
@@ -171,9 +171,9 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.settings, color: Colors.black),
-              title: Text('Configurações'),
-              onTap: () {},
+              leading: Icon(Icons.chat, color: Colors.black),
+              title: Text('Chat'),
+              onTap: () {Navigator.pushNamed(context, '/tradeOffer');},
             ),
             // Opção de sair
             Spacer(),
@@ -252,7 +252,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/tradeOffer');// Ação para adicionar um novo livro
+          Navigator.pushNamed(context, '/newBook');// Ação para adicionar um novo livro
         },
         backgroundColor: Color(0xFF77C593), // Cor verde usada no app
         child: Icon(Icons.add, color: Colors.white),
