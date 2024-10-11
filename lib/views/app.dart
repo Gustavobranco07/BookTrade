@@ -13,8 +13,8 @@ import 'trade.history.page.dart';
 import 'trade.offer.page.dart';
 import 'trade.status.page.dart';
 //import 'newaccount.page.dart';
-//import 'chats.page.dart';
-//import 'chat.page.dart';
+import 'chats.page.dart';
+import 'chat.page.dart';
 
 class BookTradeApp extends StatelessWidget {
   @override
