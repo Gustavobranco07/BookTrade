@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'chat.page.dart';
+import 'chats.page.dart';
 import 'edit.profile.page.dart';
 import 'favorite.books.page.dart';
 import 'home.page.dart';
@@ -30,6 +32,8 @@ class BookTradeApp extends StatelessWidget {
         "/newBook": (context) => BookRegistrationPage(),
         "/notifications": (context) => NotificationsPage(),
         "/tradeStatus": (context) => TradeStatusPage(),
+        "/chats":(context) => const ChatsPage(),
+        "/chat":(context) => const ChatPage(),
       },
       home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
