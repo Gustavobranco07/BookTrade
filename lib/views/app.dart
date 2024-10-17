@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'edit.profile.page.dart';
 import 'favorite.books.page.dart';
@@ -10,9 +11,6 @@ import 'register.page.dart';
 import 'trade.history.page.dart';
 import 'trade.offer.page.dart';
 import 'trade.status.page.dart';
-//import 'newaccount.page.dart';
-//import 'chats.page.dart';
-//import 'chat.page.dart';
 
 class BookTradeApp extends StatelessWidget {
   @override
@@ -20,7 +18,6 @@ class BookTradeApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
-      home: SplashScreen(), // Definindo a tela inicial como SplashScreen
       routes: {
         "/login": (context) => LoginPage(),
         "/home": (context) => HomePage(),
@@ -33,10 +30,19 @@ class BookTradeApp extends StatelessWidget {
         "/newBook": (context) => BookRegistrationPage(),
         "/notifications": (context) => NotificationsPage(),
         "/tradeStatus": (context) => TradeStatusPage(),
-        //"/new-account": (context) => NewAccountPage(),
-        //"/chats":(context) => ChatsPage(),
-        //"/chat":(context) => ChatPage(),
       },
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, AsyncSnapshot<User?> snapshot) {
+          if (snapshot.connectionState == ConnectionState.active) {
+            // Se o usuário não estiver autenticado, redirecionar para a tela de login
+            return snapshot.data == null ? LoginPage() : HomePage();
+          } else {
+            // Mostrar uma tela de carregamento enquanto a conexão está sendo estabelecida
+            return SplashScreen();
+          }
+        },
+      ),
     );
   }
 }
@@ -50,9 +56,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Aguarde 3 segundos e depois navegue para a tela de login
+    // Adicionar um delay para mostrar a tela de carregamento
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/login');
+      // Aqui o StreamBuilder no home do MaterialApp já redireciona
     });
   }
 
